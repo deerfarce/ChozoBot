@@ -1,13 +1,13 @@
 {
   "name": "chozobot",
-  "version": "1.0.0",
-  "description": "",
+  "description": "CyTube client emulator/bot with moderation features and CLI input",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "deerfarce",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deerfarce/ChozoBot.git"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cli-color": "^2.0.0",
     "discord.js": "^12.2.0",
