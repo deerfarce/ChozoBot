@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+out/
+
+./
+config*
+!config.example.js
+settings*
+!settings.example.json
