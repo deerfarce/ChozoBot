@@ -15,7 +15,7 @@ bot is in early development and may change dramatically over time.
 
 I'll get around to writing this readme properly, but:
 
-Copy the config.example.js file and name it config.js. If you're providing a room parameter to the bot, name it config.roomname.js instead.
+Copy the config.example.js file and name it config.js. If you're providing a room parameter to the bot (see below), name it config-roomname.js instead.
 
 Read through the configuration file and carefully make sure everything is set just right.
 
