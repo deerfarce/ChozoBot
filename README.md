@@ -5,6 +5,8 @@ ChozoBot is a Node application for emulating a CyTube client with CLI input and 
 Please keep backups of the database and your settings and configuration files, as this
 bot is in early development and may change dramatically over time.
 
+![Preview](https://cdn.discordapp.com/attachments/571767162314686466/762081534332502056/unknown.png "Screenshot (with debug and verbose logs)")
+
 ## Requirements
 
   - nodejs (12+, last tested on 12.18.2)
