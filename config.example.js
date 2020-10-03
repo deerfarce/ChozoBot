@@ -211,8 +211,11 @@ var config = {
     bumpCooldown: 300000
   },
   misc: {
-    //If true, bot will try to stay AFK in the room.
-    autoAFK: true,
+    //Controls the bot's AFK state automatically.
+    //  0 - Disabled (default)
+    //  1 - Tries to stay AFK at all times
+    //  2 - Tries to stay active (not AFK) at all times
+    autoAFK: 0,
     //Choose a language to use. Currently does nothing, planning on
     //  implementing this in the future (also a command to change it during runtime)
     lang: "en",
