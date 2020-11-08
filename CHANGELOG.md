@@ -1,4 +1,6 @@
 # Changelog
+  - **0.994a - November 8, 2020**
+    - Add hyphen (-) to blacklistvid ID regex
   - **0.993a - October 3, 2020**
     - Changed the config option `misc.autoAFK` to a tri-state option. Must be updated in existing configs, or it will be ignored.
       - 0: Off (default)
