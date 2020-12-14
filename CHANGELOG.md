@@ -1,4 +1,8 @@
 # Changelog
+  - **0.995a - December 14, 2020**
+    - Increased length of room_time and afk_time for the users table
+      - For existing databases, run `ALTER TABLE SCHEMA.users ALTER COLUMN room_time TYPE DECIMAL(13,3);` and again for the column `afk_time`. Be sure to replace SCHEMA with whatever your schema is called, which is usually your room's name.
+      - Fixes room times hitting the upper limit within a few months' time.
   - **0.994a - November 8, 2020**
     - Add hyphen (-) to blacklistvid ID regex
   - **0.993a - October 3, 2020**
