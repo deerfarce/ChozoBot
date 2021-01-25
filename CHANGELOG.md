@@ -1,4 +1,6 @@
 # Changelog
+  - **0.9951a - January 24, 2021**
+    - Fixed a rare bug with chat messages sent by the server
   - **0.995a - December 14, 2020**
     - Increased length of room_time and afk_time for the users table
       - For existing databases, run `ALTER TABLE SCHEMA.users ALTER COLUMN room_time TYPE DECIMAL(13,3);` and again for the column `afk_time`. Be sure to replace SCHEMA with whatever your schema is called, which is usually your room's name.
