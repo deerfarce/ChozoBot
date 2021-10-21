@@ -1,4 +1,4 @@
-# ChozoBot 0.9951a
+# ChozoBot 0.996a
 
 ChozoBot is a Node application for emulating a CyTube client with CLI input and configurable options. It can be used as a bot for your room. It should be compatible with most CyTube forks, however only the main CyTube project is supported. Currently in Alpha state.
 

@@ -14,7 +14,11 @@ var config = {
      */
     secureSocket: true,
     //Hostname of the server to connect to. https://cytu.be/ becomes "cytu.be"
-    hostname: "cytu.be"
+    hostname: "cytu.be",
+    //If true, will only allow socket connections that are on the same domain as
+    // the hostname above. Only disable this if you need to and know what you're
+    // doing.
+    sameDomainSocketOnly: true
   },
   db: {
     //If true, will use database stuff
@@ -221,11 +225,13 @@ var config = {
     lang: "en",
     //List of bot usernames that may be in your room. Bots will not receive mod-only
     //  PM broadcasts and will not be able to execute commands. Their messages cannot
-    //  be stored and/or quoted. Keep the names lowercase.
+    //  be stored and/or quoted. Keep the names lowercase. This bot's name is not needed.
+    //  Example: ["botname1", "botname2"]
     bots: [],
     //List of blacklisted avatar hostnames. If a user's profile picture's hostname
     //  matches one of these, they'll be notified if moderation.notifyBlacklistedAvatar
     //  is true.
+    //  Example: ["maliciousdomain.gov", "wackydomainname.io"]
     blacklistedAvatarHosts: [],
     //Threshold in seconds for the total playlist time to be considered low. Each time
     //  the playlist time falls below this, the bot will send a chat message warning of

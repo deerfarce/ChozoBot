@@ -1,4 +1,27 @@
 # Changelog
+  - **0.996a - October 21, 2021**
+    - Added bot.queueMedia function to allow the bot to add things to the queue
+      - This doesn't have any command associated with it, though. It's there if you'd like to make your own commands. There's a little JSDoc thing above the function definition for reference.
+      - An example for adding a simple temporary YouTube video would be: `bot.queueMedia("end", "youtube_video_url", true);`
+        - You can also use `"next"` instead of `"end"` to place it next in the queue assuming the bot has permission to.
+      - Custom embeds should work too. `bot.queueMedia("end", "customembed", true, "<iframe src='source or whatever'>", "Media Title");`
+    - Added `cfg.connection.sameDomainSocketOnly` option to the config, please add this to any existing configs if you need to. It will default to `true` if it does not exist.
+      - Only set this to `false` if you need to connect to a socket that does not live on the domain your CyTube fork is on.
+      - As far as I know, this is only relevant for some CyTube hosts, and not the main CyTube site.
+    - Logged media links (such as "now playing" logs) will have the full link instead of the shortened one
+    - Fixed dumb Discord bot oversight causing it to crash for those who use it (probably no one)
+    - Removed some room-specific emotes and filters from some commands
+      - Probably missed some, oops
+    - Added `/mute` and `/unmute` commands to the CLI, which work exactly the same as their chat command counterparts
+    - Added the ability for `sendChatMsg` to bypass the mute state, which the CLI command `/say` now does (this is the only command that does so by default)
+    - Added some clarification to some comments
+    - Now prevents invalid requests to update emote counts if the user is unregistered or a guest and guest data is off
+      - Didn't do anything other than spam DB errors
+    - Fixed a regular expression used for some wolfram responses
+    - Queue fail and queue warn logs should now properly display their messages
+    - Fixed issue when chat message was missing from the chatMsg frame
+      - This issue is only related to certain forks
+    - Updated license dates
   - **0.9951a - January 24, 2021**
     - Fixed a rare bug with chat messages sent by the server
   - **0.995a - December 14, 2020**
