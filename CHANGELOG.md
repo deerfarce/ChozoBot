@@ -1,4 +1,7 @@
 # Changelog
+  - **0.9961a - October 21, 2021**
+    - Shortened the permission checks for bot.queueMedia, forgot that the permission check function already does most of the work..
+    - ..and fixed bot.queueMedia, thought I removed something before pushing it
   - **0.996a - October 21, 2021**
     - Added bot.queueMedia function to allow the bot to add things to the queue
       - This doesn't have any command associated with it, though. It's there if you'd like to make your own commands. There's a little JSDoc thing above the function definition for reference.
