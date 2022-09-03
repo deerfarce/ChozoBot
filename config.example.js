@@ -176,7 +176,7 @@ var config = {
     //  Set to -1 to enforce cooldowns for all ranks.
     minRankToBypassCooldown: 3,
     //If true, disables any chat commands.
-    disableAllCommands: true,
+    disableAllCommands: false,
     //Put chatfilters here if needed.
     filters: {
       //Code for img chat command.
