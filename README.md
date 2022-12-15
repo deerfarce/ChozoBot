@@ -16,22 +16,34 @@ bot is in early development and may change dramatically over time.
 ## Setup
 If you would like to use features that rely on a database, refer to [this page](https://github.com/deerfarce/ChozoBot/wiki/DB-Setup-with-PostgreSQL) first.
 
-Copy the `config.example.js` file and name it `config.js`. If you're providing a room parameter to the bot (see the Usage section), name it `config-roomname.js` instead.
+Copy the `config.example.js` file and name it `config.js`. If you're providing a room parameter to the bot (see the [Usage](#usage) section), name it `config-roomname.js` instead.
 
 Read through the configuration file that you just copied, and carefully make sure everything is set just right. Every option has a comment explaining what it does.
 
 If `db.use` is set, your PostgreSQL server MUST be on or the bot will receive errors every time a query is attempted.
 
-Open a command prompt or terminal window in the directory of the bot and install the node modules by typing: `npm install`
+Open a command prompt or terminal window in the directory of the bot and install the node modules by typing:
+```sh
+npm install
+```
 
 ## Usage
-Run the bot from within a terminal window: `node .`
+Run the bot from within a terminal window:
+```sh
+node .
+```
 
-You can provide a room parameter: `node . -r roomname` if you'd like to have different configurations for different rooms. As mentioned in the Setup section, this requires that your config file is named `config-roomname.js`
+You can provide a room parameter if you'd like to have different configurations for different rooms. As mentioned in the [Setup](#setup) section, this requires that your config file is named `config-roomname.js`:
+```sh
+node . -r roomname
+```
 
-You may also use the scripts provided to allow the bot to restart if it is killed. Replace `node` with `./start.sh` (Linux) or `./start.bat` (Windows).
+You may also use the scripts provided to allow the bot to restart if it is killed. Replace `node .` with `./start.sh` (Linux) or `./start.bat` (Windows).
 
-Example: `./start.sh -r roomname`
+Example:
+```sh
+./start.sh -r roomname
+```
 
 ## Other Notes
 It is recommended to have the bot at rank 3 (Admin) so it has full functionality.
