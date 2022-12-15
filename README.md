@@ -38,7 +38,7 @@ You can provide a room parameter if you'd like to have different configurations 
 node . -r roomname
 ```
 
-You may also use the scripts provided to allow the bot to restart if it is killed. Replace `node .` with `./start.sh` (Linux) or `./start.bat` (Windows).
+You may also use the scripts provided to allow the bot to restart if it is killed. Replace `node .` with `./start.sh` (Linux) or `.\start.bat` (Windows).
 
 Example:
 ```sh
