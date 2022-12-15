@@ -1,4 +1,4 @@
-# ChozoBot 0.997a
+# ChozoBot 0.9971a
 
 [Changelog](CHANGELOG.md) • [Chat Commands](CHATCOMMANDS.MD) • [CLI Commands](CLICOMMANDS.MD)
 

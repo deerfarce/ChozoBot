@@ -1,4 +1,10 @@
 # Changelog
+  - **0.9971a - December 15, 2022**
+    - Fixed being unable to use the db with room names that contained certain characters (such as hyphens)
+    - Added some schema name validation checks
+    - Messages that begin with 🤖 will be treated as bot messages
+      - This is used with "built-in bots" in scripts such as BillTube
+      - These messages will not count towards emote usage counts, will not be stored as quotes, and cannot use inline chat commands
   - **0.997a - December 15, 2022**
     - Bumped some dep versions
       - You must run `npm install` if updating the bot

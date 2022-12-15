@@ -1,5 +1,6 @@
 ## Chat Commands
 Here is a list of all vanilla commands! Note that many of these require certain database features and API keys.
+<br />If you are looking for CLI commands, [click here](CLICOMMANDS.MD).
 <br />The table is very wide so you may have to scroll horizontally...
 ###### Last updated Dec 15, 2022
 
