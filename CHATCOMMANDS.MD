@@ -1,7 +1,7 @@
 ## Chat Commands
 Here is a list of all vanilla commands! Note that many of these require certain database features and API keys.
 <br />The table is very wide so you may have to scroll horizontally...
-###### Last updated Jun 25, 2022
+###### Last updated Dec 15, 2022
 
 | Command | Rank | Usage | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Cooldown Per User | Global Cooldown | Accepted via PM? | Required Channel Perms | Changeable rank? | Notes |
 | ----------- | ----------- | ----------- | ----------- |  ----------- |  ----------- |  ----------- |  ----------- | ----------- | ----------- |
@@ -63,8 +63,10 @@ Here is a list of all vanilla commands! Note that many of these require certain 
 | su-clearquotes | >= Room Owner |`!su-clearquotes username`| Clears all quotes of a given user. | 10 seconds | 0.5 seconds | yes | - | yes | Requires `db.useTables.chat`
 | su-disallow | >= Room Owner |`!su-disallow username`| Disallows a user regardless of rank. | - | 0.5 seconds | yes | - | no |
 | timeban | >= Mod |`!timeban user time`| Bans a user and unbans them once the specified time is over. Minimum time is 1 minute, and if an invalid value is given, it defaults to 1 minute. Time must be written like: #y#d#h#m#s (years, days, hours, minutes, seconds)<br />Examples of timebans: `!timeban user 6d`, `!timeban user 1h30m`, `!timeban user 1y1d1h` | - | - | yes | `Ban users`, `Chat` | yes | See `ban` about ban reasons
+| trigger | >= Admin |`!trigger $`| Temporarily changes the bot's command trigger. Will reset the next time the bot is started. | - | 0.5 seconds | yes | - | yes |
 | top5emotes | >= User |`!top5emotes`| Displays the top 5 most used emotes so far. | 20 seconds | 15 seconds | no | `Chat` | yes | Requires `db.useTables.emote_data`
 | top5emoteusers | >= User |`!top5emoteusers`| Displays the top 5 emote users. | 20 seconds | 15 seconds | no | `Chat` | yes | Requires `db.useTables.emote_data`
+| top5useremotes | >= User |`!top5useremotes user`| Displays a user's top 5 used emotes. | 20 seconds | 15 seconds | no | `Chat` | yes | Requires `db.useTables.emote_data`
 | unban | >= Mod |`!unban username`| Unbans the given user. This will not work if the user is timebanned (to avoid accidents), use !untimeban for that. | - | 1 second | yes | `Ban users` | no |
 | untimeban | >= Mod |`!untimeban username`| Unbans a user if they are timebanned. Fundamentally does the same thing as !unban but exists so mods don't unknowingly unban someone who is meant to be banned for a while. | - | 1 second | yes | `Ban users` | no |
 | unmute | >= Mod |`!unmute`| Unmute the bot if it's muted. | - | 1 second | yes | - | yes |
@@ -76,4 +78,4 @@ Here is a list of all vanilla commands! Note that many of these require certain 
 
 [^1]: img requires a channel filter which replaces a link with an embedded image, such as this regex: `\b(?:https:\/\/)?([^ ]*?\.[^ ]*?)[,.](?:IMG_CODE_HERE)$` and IMG_CODE_HERE must be set in the config at `chat.filters.img`. It should preferably be a private code that no one will guess.
 
-[^2]: see [here](https://github.com/calzoneman/sync/blob/bd63013524d06f25258aab054d150325a4b91e10/www/js/util.js#L25) for source abbreviations
+[^2]: see [here](https://github.com/calzoneman/sync/blob/d37e69e1a6b329974c5a27a9beb80221a973861a/www/js/util.js#L25) for source abbreviations

@@ -4,6 +4,8 @@ var config = {
     //YouTube API v3 key
     youtube_key: "",
     //Wolfram API key
+    //WARNING: Wolfram can potentially reveal your IP and/or location through malicious
+    //  queries. Do not use on a personal network if you care about that.
     wolfram_key:""
   },
   //Connection and socket options...
@@ -89,6 +91,10 @@ var config = {
       5: "red",
       255: "magentaBright"
     },
+    //If true, ALL logging EXCEPT error logging will be disabled.
+    disableLogging: false,
+    //If true, chat messages will be logged. Otherwise, the bot will try not to log any chat messages or PMs to a file.
+    logChat: true,
     /* If true, chat messages may be sent from the CLI Interface
      * without using the /say command. Otherwise, if false,
      * the /say command must be used to send a chat message.
@@ -185,6 +191,9 @@ var config = {
       commentAuthor: "",
       //Code for pokeroll filter
       pokeroll: "",
+      //Bold filter. Include only one side of the filter. *text* becomes *, **text** becomes **
+      //Default filter in brand new channels is *text*
+      bold: "*",
       //Tags for spoiler filter. Opener is the left tag, closer is the right tag.
       //Example: [spoiler] is the opener, [/spoiler] is the closer
       spoilerTagOpener: "",
@@ -265,6 +274,15 @@ var config = {
     notifySkipRateChange: true
   },
   advanced: {
+    //If true, case will be ignored when checking and counting emote usage.
+    //  This is NOT vanilla CyTube behavior and you should ONLY use this if you
+    //  know what you're doing.
+    //  When true, duplicate emote names with differing cases WILL disrupt emote counts
+    //  in the database. Make sure your room has zero duplicate emote names before turning this on.
+    //  Your room should also have a custom execEmotes to allow case-insensitive emote usage.
+    //
+    //  If you have no idea what this is all about, keep this set to false.
+    caseInsensitiveEmotes: false,
     //If true, will automatically grab the Channel Log and save it after certain channel events.
     // Requires Rank 3+
     automaticChannelLog: false,

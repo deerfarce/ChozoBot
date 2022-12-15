@@ -19,9 +19,17 @@ if %errorlevel% EQU 3 (
 	echo.
 	goto close
 )
+if %errorlevel% EQU 0 (
+	timeout /t 2 /nobreak
+	goto bot
+)
+if %errorlevel% NEQ 0 (
+	color 0c
+	echo Unhandled exit code was returned: %errorlevel%
+	echo.
+	goto close
+)
 
-timeout /t 2 /nobreak
-goto bot
 
 :close
 pause

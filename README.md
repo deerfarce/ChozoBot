@@ -1,6 +1,6 @@
-# ChozoBot 0.9961a
+# ChozoBot 0.997a
 
-[Changelog](CHANGELOG.md) • [Chat Commands](CHATCOMMANDS.MD)
+[Changelog](CHANGELOG.md) • [Chat Commands](CHATCOMMANDS.MD) • [CLI Commands](CLICOMMANDS.MD)
 
 ChozoBot is a Node application for emulating a CyTube client with CLI input and configurable options. It can be used as a bot for your room. It should be compatible with most CyTube forks, however only the main CyTube project is supported. Currently in Alpha state.
 
@@ -10,45 +10,36 @@ bot is in early development and may change dramatically over time.
 ![Preview](https://cdn.discordapp.com/attachments/571767162314686466/762081534332502056/unknown.png "Screenshot (with debug and verbose logs)")
 
 ## Requirements
-
-  - nodejs (12+, last tested on 12.18.2)
-  - postgresql (tested on 12.3, optional - only if using database. will write more setup info eventually. create a schema with the name of the room you're using the bot in and grant all perms to the user who owns the database)
-    - root/admin access for setting up psql
+  - [node.js](https://github.com/nodejs/Release) - Currently, the minimum version required is 12.20. The active LTS is recommended.
+  - postgresql (tested on 14.5, optional - only if using database)
 
 ## Setup
-
-I'll get around to writing this readme properly, but:
-
-Copy the config.example.js file and name it config.js. If you're providing a room parameter to the bot (see below), name it config-roomname.js instead.
-
-Read through the configuration file and carefully make sure everything is set just right.
-
-Install the node modules: `npm install`
+If you would like to use features that rely on a database, refer to [this page](https://github.com/deerfarce/ChozoBot/wiki/DB-Setup-with-PostgreSQL) first.
+Copy the `config.example.js` file and name it `config.js`. If you're providing a room parameter to the bot (see the Usage section), name it `config-roomname.js` instead.
+Read through the configuration file that you just copied, and carefully make sure everything is set just right. Every option has a comment explaining what it does.
+If `db.use` is set, your PostgreSQL server MUST be on or the bot will receive errors every time a query is attempted.
+Open a command prompt or terminal window in the directory of the bot and install the node modules by typing: `npm install`
 
 ## Usage
+Run the bot from within a terminal window: `node .`
+You can provide a room parameter: `node . -r roomname` if you'd like to have different configurations for different rooms. As mentioned in the Setup section, this requires that your config file is named `config-roomname.js`
 
-Run the bot: `node .`
+You may also use the scripts provided to allow the bot to restart if it is killed. Replace `node` with `./start.sh` (Linux) or `./start.bat` (Windows).
+Example: `./start.sh -r roomname`
 
-You can provide a room parameter: `node . -r room` if you'd like to have different configurations for different rooms.
-
-You may also use the scripts provided to allow the bot to restart if it is killed. Replace `node` with `./start.sh`, for example. However, the batch (Windows) script was not tested since it was last edited.
-
+## Other Notes
 It is recommended to have the bot at rank 3 (Admin) so it has full functionality.
 
-When updating the bot, you must make sure to add any new configuration lines every time.
+When updating the bot (usually easily done with just `git pull`), you should add any new configuration options to your config file. However, most new options will automatically be set to their default values if they are not present in the config.
+Run `npm install` whenever dependencies are updated.
 
-To create custom commands, see customcommands.example.js for writing them, and the bottom of the config.js file for more info on including them.
+To create custom commands, see [customcommands.example.js](lib/customchatcommands.example.js) for info on writing them and an example command, and the bottom of the [config.js](config.example.js) file for more info on including them.
 
 ## To Do
-
- - Of course, write this properly. There's a lot of info on commands, too.
  - A lot, probably. I don't know a whole lot about psql or the node module for it, so it probably looks awful. Keep in mind this bot is in an alpha state.
  - I would also like to be able to run multiple bots in different rooms but have certain events broadcasted among all of them, such as bans. Maybe one day.
 
 ## Known Issues
-
  - partitionChange event is undertested, and sometimes may not work right.
  - Guest functionality is undertested as well.
- - Bump position memory was redone and is not fully tested.
- - Bot does not check for errors if psql is not installed but the DB is enabled in the config. Same thing if the psql service is disabled.
  - Database may throw errors if the bot tries to access tables before they're initialized for the first time. This shouldn't happen too often.

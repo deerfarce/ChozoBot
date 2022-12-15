@@ -1,4 +1,33 @@
 # Changelog
+  - **0.997a - December 15, 2022**
+    - Bumped some dep versions
+      - You must run `npm install` if updating the bot
+      - Minimum Node version bumped to 12.20 as a result
+      - Discord.js is still at v12 which may or may not work at this point
+    - Added config option `advanced.caseInsensitiveEmotes` (default: `false`)
+      - If enabled, the bot will check for emotes in messages without any regard for character case. This means your room's emotes MUST NOT have any duplicate names in order to avoid incorrectly recording emote usage. If you don't know what this is for, you don't need it.
+    - Added config option `interface.logChat` (default: `true`)
+      - Allows you to control whether or not chat messages are written to a log file
+    - Added config option `interface.disableLogging` (default: `false`)
+      - Allows you to disable ALL logging except error logging
+    - Added config option `chat.filters.bold` (default: `"*"`)
+      - Used for commands that output bold text
+    - Added some error responses to the `bump` command
+    - Added some chat commands
+      - `fortune` gives users a random fortune based on /s4s/ fortunes. The response sets a certain "luck" amount for the user which is currently used for the `roll` command, where luck determines the amount of lucky rolls the user gets. After the roll, the user's luck is reset to 0.
+      - `top5useremotes` can show a user's top 5 used emotes
+      - `trigger` allows users to change the bot's command trigger. Will not save the new trigger - the trigger will reset to whatever is in your config when the bot starts again.
+    - Disabled dislikes on the `vidstats` chat command.
+    - Fixed a crash by automatically creating logs/ and errors/ upon start if they don't exist
+    - Attempted to improve psql error handling a bit
+      - Certain errors pertaining to connection problems with PostgreSQL no longer crash the bot as they're not necessarily fatal
+      - If connection issues occur while `config.db.use` is enabled, the DB no longer disables itself just in case the server comes back
+    - Hang on exit somewhat fixed
+    - CTRL-C is now allowed once the bot is killed
+    - Added some CLI commands
+      - `/testdb` helps test if queries are able to reach the SQL server
+      - `/trigger` allows you to change the bot's command trigger. Like the chat command, it will not save this trigger.
+    - May have fixed an exception that rarely occurs when users leave the room
   - **0.9961a - October 21, 2021**
     - Shortened the permission checks for bot.queueMedia, forgot that the permission check function already does most of the work..
     - ..and fixed bot.queueMedia, thought I removed something before pushing it

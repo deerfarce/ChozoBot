@@ -3,6 +3,8 @@ package-lock.json
 out/
 
 ./
+logs/*
+errors/*
 config*
 !config.example.js
 settings*
